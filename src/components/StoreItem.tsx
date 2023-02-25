@@ -1,5 +1,6 @@
 import { Button, Card } from "react-bootstrap";
 import { formatCurrency } from "../utilities/formatCurrency";
+import { useShoppingCart } from "./../context/ShoppingCartContext";
 
 interface StoreItemsProps {
   id: number;
@@ -9,7 +10,14 @@ interface StoreItemsProps {
 }
 
 const StoreItem = ({ id, name, price, imgUrl }: StoreItemsProps) => {
-  const qunatity: number = 1;
+  const {
+    getItemQuantity,
+    increaseCartquantity,
+    decreaseCartquantity,
+    reamoveFromCart,
+  } = useShoppingCart();
+
+  const qunatity: number = getItemQuantity(id);
   return (
     <Card className="h-100">
       <Card.Img
@@ -24,8 +32,11 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemsProps) => {
           <span className="ms-2 text-muted">{formatCurrency(price)}</span>
         </Card.Title>
         <div className="mt-auto">
-          {qunatity === 10 ? (
-            <Button className="w-100"> +Add to cart </Button>
+          {qunatity === 0 ? (
+            <Button className="w-100" onClick={() => increaseCartquantity(id)}>
+              {" "}
+              +Add to cart{" "}
+            </Button>
           ) : (
             <div
               className="d-flex align-items-center flex-column"
@@ -35,14 +46,16 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemsProps) => {
                 className="d-flex justify-content-center align-items-center"
                 style={{ gap: ".5rem" }}
               >
-                <Button> + </Button>
+                <Button onClick={() => increaseCartquantity(id)}> + </Button>
                 <div>
                   {" "}
                   <span className="fs-3"> {qunatity}</span> in cart
                 </div>
-                <Button> - </Button>
+                <Button onClick={() => decreaseCartquantity(id)}> - </Button>
               </div>
-              <Button variant="danger">Remove </Button>
+              <Button variant="danger" onClick={() => reamoveFromCart(id)}>
+                Remove{" "}
+              </Button>
             </div>
           )}
         </div>
