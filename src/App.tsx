@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Pages/Home";
-import Store from "./components/Pages/Store";
-import About from "./components/Pages/About";
-import Navbar from "./components/Pages/Navbar";
 import { Container } from "react-bootstrap";
+import Home from "./Pages/Home";
+import Store from "./Pages/Store";
+import About from "./Pages/About";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
