@@ -21,18 +21,24 @@ type shoppingCartContextType = {
   cartItems: CartItem[];
 };
 
+// create a context object for the shopping cart
 const shoppingCartContext = createContext({} as shoppingCartContextType);
 
+// custom hook to use the shopping cart context
 export const useShoppingCart = () => {
   return useContext(shoppingCartContext);
 };
 
+// provider component for the shopping cart context
 export const ShoppingCartProvider = ({
   children,
 }: shoppingCartProviderProps): JSX.Element => {
+  // state for the items in the cart
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  // state for whether the cart is currently open or closed
   const [isOpen, setIsOpen] = useState(false);
 
+  // calculate the total quantity of all items in the cart
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
     0
@@ -104,7 +110,7 @@ export const ShoppingCartProvider = ({
       }}
     >
       {children}
-      <ShoppingCart isOpen={isOpen} />
+      <ShoppingCart isOpen={isOpen} setIsOpen={setIsOpen} />
     </shoppingCartContext.Provider>
   );
 };
