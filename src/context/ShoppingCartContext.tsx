@@ -7,7 +7,7 @@ type shoppingCartProviderProps = {
 
 type CartItem = {
   id: number;
-  qunatity: number;
+  quantity: number;
 };
 
 type shoppingCartContextType = {
@@ -16,7 +16,7 @@ type shoppingCartContextType = {
   getItemQuantity: (id: number) => number;
   increaseCartquantity: (id: number) => void;
   decreaseCartquantity: (id: number) => void;
-  reamoveFromCart: (id: number) => void;
+  removeFromCart: (id: number) => void;
   cartQuantity: number;
   cartItems: CartItem[];
 };
@@ -34,24 +34,24 @@ export const ShoppingCartProvider = ({
   const [isOpen, setIsOpen] = useState(false);
 
   const cartQuantity = cartItems.reduce(
-    (quantity, item) => item.qunatity + quantity,
+    (quantity, item) => item.quantity + quantity,
     0
   );
 
   const getItemQuantity = (id: number) => {
-    return cartItems.find((item) => item.id === id)?.qunatity || 0;
+    return cartItems.find((item) => item.id === id)?.quantity || 0;
   };
 
   const increaseCartquantity = (id: number) => {
     setCartItems((cartItems) => {
       if (cartItems.find((item) => item.id === id) == null) {
-        return [...cartItems, { id, qunatity: 1 }];
+        return [...cartItems, { id, quantity: 1 }];
       } else {
         return cartItems.map((item) => {
           if (item.id === id) {
             return {
               ...item,
-              qunatity: item.qunatity + 1,
+              quantity: item.quantity + 1,
             };
           } else {
             return item;
@@ -63,14 +63,14 @@ export const ShoppingCartProvider = ({
 
   const decreaseCartquantity = (id: number) => {
     setCartItems((cartItems) => {
-      if (cartItems.find((item) => item.id === id)?.qunatity === 1) {
+      if (cartItems.find((item) => item.id === id)?.quantity === 1) {
         return cartItems.filter((item) => item.id !== id);
       } else {
         return cartItems.map((item) => {
           if (item.id === id) {
             return {
               ...item,
-              qunatity: item.qunatity - 1,
+              quantity: item.quantity - 1,
             };
           } else {
             return item;
@@ -80,7 +80,7 @@ export const ShoppingCartProvider = ({
     });
   };
 
-  const reamoveFromCart = (id: number) => {
+  const removeFromCart = (id: number) => {
     setCartItems((cartItems) => {
       return cartItems.filter((item) => item.id !== id);
     });
@@ -96,7 +96,7 @@ export const ShoppingCartProvider = ({
         getItemQuantity,
         increaseCartquantity,
         decreaseCartquantity,
-        reamoveFromCart,
+        removeFromCart,
         cartOpen,
         cartClose,
         cartItems,
