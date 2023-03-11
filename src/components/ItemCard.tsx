@@ -7,9 +7,10 @@ interface StoreItemsProps {
   price: number;
   name: string;
   imgUrl: string;
+  title: string;
 }
 
-const StoreItem = ({ id, name, price, imgUrl }: StoreItemsProps) => {
+const StoreItem = ({ id, name, price, imgUrl, title }: StoreItemsProps) => {
   const {
     getItemQuantity,
     increaseCartquantity,
@@ -19,18 +20,25 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemsProps) => {
 
   const quantity: number = getItemQuantity(id);
   return (
-    <Card className="h-100">
+    <Card style={{ width: "16rem" }}>
       <Card.Img
         variant="top"
         src={imgUrl}
-        height="200px"
-        style={{ objectFit: "cover" }}
+        height="250px"
+        style={{
+          objectFit: "contain",
+          padding: "5px",
+          margin: "auto",
+        }}
       ></Card.Img>
       <Card.Body className=" d-felx felx-column">
-        <Card.Title className="d-flex  justify-content-between align-items-baseline mb-4">
-          <span className="fs-2">{name}</span>
+        <Card.Title className="d-flex  justify-content-between align-items-baseline mb-2">
+          <span className="fs-5">{name}</span>
           <span className="ms-2 text-muted">{formatCurrency(price)}</span>
         </Card.Title>
+        <Card.Text>
+          <span className="ms-2 text-muted">{title}</span>
+        </Card.Text>
         <div className="mt-auto">
           {quantity === 0 ? (
             <Button className="w-100" onClick={() => increaseCartquantity(id)}>
