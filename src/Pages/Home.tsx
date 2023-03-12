@@ -1,7 +1,12 @@
 import React from "react";
+import Banner from "../components/Banner/Banner";
 
 const Home = () => {
-  return <div>add something in here using react bootstrap </div>;
+  return (
+    <div>
+      <Banner />
+    </div>
+  );
 };
 
 export default Home;
