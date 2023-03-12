@@ -1,4 +1,4 @@
-import { useContext, createContext, ReactNode, useState } from "react";
+import { useContext, createContext, ReactNode, useState, useMemo } from "react";
 import ShoppingCart from "./../components/ShoppingCart";
 
 type shoppingCartProviderProps = {
@@ -96,19 +96,21 @@ export const ShoppingCartProvider = ({
 
   const cartClose = () => setIsOpen(false);
 
+  const memoizedValue = useMemo(() => {
+    return {
+      getItemQuantity,
+      increaseCartquantity,
+      decreaseCartquantity,
+      removeFromCart,
+      cartOpen,
+      cartClose,
+      cartItems,
+      cartQuantity,
+    };
+  }, [cartItems, cartQuantity, getItemQuantity]);
+
   return (
-    <shoppingCartContext.Provider
-      value={{
-        getItemQuantity,
-        increaseCartquantity,
-        decreaseCartquantity,
-        removeFromCart,
-        cartOpen,
-        cartClose,
-        cartItems,
-        cartQuantity,
-      }}
-    >
+    <shoppingCartContext.Provider value={memoizedValue}>
       {children}
       <ShoppingCart isOpen={isOpen} setIsOpen={setIsOpen} />
     </shoppingCartContext.Provider>
