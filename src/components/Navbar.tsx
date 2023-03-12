@@ -1,5 +1,4 @@
-import { Navbar as Navbarbs } from "react-bootstrap";
-import { Container, Nav, Button } from "react-bootstrap";
+import { Navbar as Navbarbs, Container, Nav, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useShoppingCart } from "./../context/ShoppingCartContext";
 
