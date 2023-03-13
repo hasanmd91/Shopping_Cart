@@ -107,7 +107,7 @@ export const ShoppingCartProvider = ({
       cartItems,
       cartQuantity,
     };
-  }, [cartItems, cartQuantity, getItemQuantity]);
+  }, [cartItems, cartQuantity]);
 
   return (
     <shoppingCartContext.Provider value={memoizedValue}>
