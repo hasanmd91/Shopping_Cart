@@ -97,6 +97,10 @@ export const ShoppingCartProvider = ({
   const cartClose = () => setIsOpen(false);
 
   const memoizedValue = useMemo(() => {
+    const getItemQuantity = (id: number) => {
+      return cartItems.find((item) => item.id === id)?.quantity || 0;
+    };
+
     return {
       getItemQuantity,
       increaseCartquantity,
@@ -107,7 +111,7 @@ export const ShoppingCartProvider = ({
       cartItems,
       cartQuantity,
     };
-  }, [cartItems, cartQuantity, getItemQuantity]);
+  }, [cartItems, cartQuantity]);
 
   return (
     <shoppingCartContext.Provider value={memoizedValue}>
