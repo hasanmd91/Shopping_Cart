@@ -44,10 +44,6 @@ export const ShoppingCartProvider = ({
     0
   );
 
-  const getItemQuantity = (id: number) => {
-    return cartItems.find((item) => item.id === id)?.quantity || 0;
-  };
-
   const increaseCartquantity = (id: number) => {
     setCartItems((cartItems) => {
       if (cartItems.find((item) => item.id === id) == null) {
