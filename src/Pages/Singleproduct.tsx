@@ -22,12 +22,7 @@ const Singleproduct: React.FC = () => {
     title: "",
   });
 
-  const {
-    getItemQuantity,
-    increaseCartquantity,
-    decreaseCartquantity,
-    removeFromCart,
-  } = useShoppingCart();
+  const { increaseCartquantity } = useShoppingCart();
 
   const navigate = useNavigate();
   const params = useParams<{ singleproduct?: string }>();

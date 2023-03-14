@@ -10,14 +10,11 @@ export function Footer() {
         </div>
       </section>
 
-      <section className="">
-        <Container
-          className="text-center text-md-start p-2 "
-          style={{ backgroundColor: "black" }}
-        >
+      <section>
+        <Container className="text-center text-light text-md-start p-2 bg-dark">
           <Row className="mt-3">
             <Col md="3" lg="4" xl="3" className="mx-auto mb-4 ">
-              <h6 className="text-uppercase fw-bold mb-4">Book Shop</h6>
+              <h6 className="text-uppercase fw-bold mb-4">Arctic Books </h6>
               <p>
                 Our company specializes in providing books written by famous
                 authors at affordable prices. We offer a wide selection of books
