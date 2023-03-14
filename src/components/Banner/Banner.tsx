@@ -7,7 +7,7 @@ import tbbanner2 from "./Images/tbanner2.jpg";
 const Banner = () => {
   return (
     <React.Fragment>
-      <Carousel>
+      <Carousel interval={2000} pause={false}>
         <Carousel.Item>
           <img className="d-block w-100" src={tbbanner1} alt="First slide" />
           <Carousel.Caption>
