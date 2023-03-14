@@ -36,6 +36,6 @@ Overall, our team was able to create a robust and functional application that is
 
 ## Screenshots
 
-![User interface](assets\1.png)
-![User interface](assets\2.png)
-![User interface](assets\3.png)
+![User interface](assets/1.png)
+![User interface](assets/2.png)
+![User interface](assets/3.png)
