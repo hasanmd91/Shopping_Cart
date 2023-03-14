@@ -11,7 +11,6 @@ import { Footer } from "./Pages/Footer";
 const App = () => {
   return (
     <>
-      {" "}
       <ShoppingCartProvider>
         <Navbar />
         <Container className="mb-4">

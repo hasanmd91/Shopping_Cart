@@ -6,7 +6,7 @@ const Navbar = () => {
   const { cartQuantity, cartOpen } = useShoppingCart();
 
   return (
-    <Navbarbs className="bg-white shadow-sm mb-3">
+    <Navbarbs className="bg-white shadow-lg mb-5 fs-5">
       <Container>
         <Nav className="me-auto">
           <Nav.Link to="/" as={NavLink}>
