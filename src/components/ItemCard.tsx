@@ -1,6 +1,7 @@
 import { Button, Card } from "react-bootstrap";
 import { formatCurrency } from "../utilities/formatCurrency";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { Link } from "react-router-dom";
 
 interface StoreItemsProps {
   id: number;
@@ -21,6 +22,8 @@ const StoreItem = ({ id, name, price, imgUrl, title }: StoreItemsProps) => {
   const quantity: number = getItemQuantity(id);
   return (
     <Card style={{ width: "16rem" }}>
+
+      <Link to={`/store/${id}`}> 
       <Card.Img
         variant="top"
         src={imgUrl}
@@ -31,6 +34,7 @@ const StoreItem = ({ id, name, price, imgUrl, title }: StoreItemsProps) => {
           margin: "auto",
         }}
       ></Card.Img>
+      </Link>
       <Card.Body className=" d-felx felx-column">
         <Card.Title className="d-flex  justify-content-between align-items-baseline mb-2">
           <span className="fs-5">{name}</span>
