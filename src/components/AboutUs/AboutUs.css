@@ -1,0 +1,19 @@
+.aboutMe {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.aboutMe .details {
+    max-width: 30rem;
+    margin: 0 2rem;
+}
+
+.aboutMe .details h2 {
+    text-align: center;
+}
+
+.aboutMe img {
+    height: 100%;
+}
