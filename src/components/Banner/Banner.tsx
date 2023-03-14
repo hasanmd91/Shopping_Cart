@@ -8,7 +8,7 @@ import sale from "./Images/sale.png";
 const Banner = () => {
   return (
     <React.Fragment>
-      <Carousel interval={2000} pause={false}>
+      <Carousel interval={2000} pause={false} variant="dark">
         <Carousel.Item>
           <img className="d-block w-100" src={banner1} alt="First slide" />
         </Carousel.Item>
