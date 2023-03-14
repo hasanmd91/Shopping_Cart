@@ -4,7 +4,7 @@ import storeItems from "../Data/items.json";
 import { useParams, useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
-interface product {
+interface productSingle {
   id: number | null;
   price: number | null;
   name: string;
@@ -14,7 +14,7 @@ interface product {
 
 const Singleproduct: React.FC = () => {
   const [loading, setisLoading] = useState<boolean>(true);
-  const [product, setProduct] = useState<product>({
+  const [product, setProduct] = useState<productSingle>({
     id: null,
     price: null,
     name: "",
