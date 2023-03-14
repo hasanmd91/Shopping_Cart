@@ -13,7 +13,7 @@ const App = () => {
       {" "}
       <ShoppingCartProvider>
         <Navbar />
-        <Container className="mb-4" style={{ minHeight: "100vh" }}>
+        <Container className="mb-4">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/store" element={<Store />} />
