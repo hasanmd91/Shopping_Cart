@@ -2,10 +2,11 @@
   {
     "id": 1,
     "name": "Harry Potter",
-    "title": " The philosophers stone",
-    "price": 24.99,
-    "imgUrl": "https://tse3.mm.bing.net/th?id=OIP.KyE8kFf9BoQA7NqeNgcXjwHaJu&pid=Api&P=0"
+    "title": " Half Blood Price",
+    "price": 35,
+    "imgUrl": "https://i1.wp.com/geekdad.com/wp-content/uploads/2013/07/hpnc6.jpg?resize=1575%2C2400&ssl=1"
   },
+
   {
     "id": 2,
     "name": "Harry Potter",
@@ -72,10 +73,11 @@
   {
     "id": 11,
     "name": "Harry Potter",
-    "title": " The Chamber of Secreats",
-    "price": 35,
-    "imgUrl": "https://i1.wp.com/geekdad.com/wp-content/uploads/2013/07/hpnc6.jpg?resize=1575%2C2400&ssl=1"
+    "title": " The philosophers stone",
+    "price": 24.99,
+    "imgUrl": "https://tse3.mm.bing.net/th?id=OIP.KyE8kFf9BoQA7NqeNgcXjwHaJu&pid=Api&P=0"
   },
+
   {
     "id": 12,
     "name": "Harry Potter",
