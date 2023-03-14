@@ -5,10 +5,15 @@ import banner1 from "./Images/banner1.png";
 import banner2 from "./Images/banner2.png";
 import sale from "./Images/sale.png";
 
-const Banner = () => {
+interface BannerProps {
+  slideInterval: number;
+  pauseOnHover?: 'hover' | false;
+}
+
+const Banner: React.FC<BannerProps> = ({slideInterval, pauseOnHover=false}) => {
   return (
     <React.Fragment>
-      <Carousel interval={2000} pause={false} variant="dark">
+      <Carousel interval={slideInterval} pause={pauseOnHover} variant="dark">
         <Carousel.Item>
           <img className="d-block w-100" src={banner1} alt="First slide" />
         </Carousel.Item>
