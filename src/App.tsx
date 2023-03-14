@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Home from "./Pages/Home";
 import Store from "./Pages/Store";
+import Singleproduct from "./Pages/Singleproduct";
 import About from "./Pages/About";
 import Navbar from "./components/Navbar";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
@@ -17,6 +18,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/store" element={<Store />} />
+            <Route path="/store/:singleproduct" element={<Singleproduct />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </Container>
