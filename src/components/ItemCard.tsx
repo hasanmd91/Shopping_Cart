@@ -21,19 +21,18 @@ const StoreItem = ({ id, name, price, imgUrl, title }: StoreItemsProps) => {
 
   const quantity: number = getItemQuantity(id);
   return (
-    <Card style={{ width: "16rem" }}>
-
-      <Link to={`/store/${id}`}> 
-      <Card.Img
-        variant="top"
-        src={imgUrl}
-        height="250px"
-        style={{
-          objectFit: "contain",
-          padding: "5px",
-          margin: "auto",
-        }}
-      ></Card.Img>
+    <Card>
+      <Link to={`/store/${id}`}>
+        <Card.Img
+          variant="top"
+          src={imgUrl}
+          height="250px"
+          style={{
+            objectFit: "contain",
+            padding: "5px",
+            margin: "auto",
+          }}
+        ></Card.Img>
       </Link>
       <Card.Body className=" d-felx felx-column">
         <Card.Title className="d-flex  justify-content-between align-items-baseline mb-2">
